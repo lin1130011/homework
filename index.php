@@ -20,10 +20,13 @@
 
     .title {
       width: 100%;
-      height: 300px;
       background: red;
-      background-image: url(./images/dargon.png);
       background-size: cover;
+    }
+
+    .title>img {
+      width: 100%;
+      height: 300px;
     }
 
     .left {
@@ -41,7 +44,9 @@
 
 <body>
   <div class="box">
-    <div class="title"></div>
+    <div class="title">
+      <img src="./images/4.jpg" alt="">
+    </div>
     <div class="left"></div>
     <div class="right"></div>
   </div>
