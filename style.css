@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+.box {
+    width: 80%;
+    margin: auto;
+    /* height: 5000px; */
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: gray; */
+}
+
+
+.title {
+    width: 100%;
+    height: 426.34px;
+    /* background-image: url("./images/4.jpg"); */
+    /* background: red; */
+
+}
+
+
+.title>img {
+    width: 100%;
+    height: 100%;
+}
+
+.left {
+    display: flex;
+    width: 30%;
+    font-size: 48px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #f4845f, #ffe1a8, #f07167);
+    /* 設置水平漸變，從 lightblue 到 lightgreen */
+    animation: move 5s ease infinite;
+    background-size: 500% 500%;
+}
+
+@keyframes move {
+    0% {
+        background-position: 0% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+.title-content {
+    text-align: center;
+    font-family: 標楷體;
+}
+
+.keyword {
+    color: brown;
+}
+
+.right {
+    display: flex;
+    width: 70%;
+    height: 100%;
+    /* background: lightblue; */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.header,
+.outside-holiday,
+.holiday,
+.outsideday,
+.day {
+
+    display: flex;
+    width: 14%;
+    height: 50px;
+    border: 1px solid #540b0e;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+
+}
+
+.header {
+    background-color: #ffe1a8;
+}
+
+.outsideday,
+.outside-holiday {
+    color: darkgrey;
+    font-weight: bold;
+
+}
+
+.holiday,
+.outside-holiday {
+    background-color: #f07167;
+}
+
+.day,
+.outsideday {
+    background-color: whitesmoke;
+}
+
+.day {
+    font-weight: 1000;
+}
+
+.row {
+    margin: auto;
+    width: 80%;
+
+}
+
+.item1 {
+    float: left;
+}
+
+.item2 {
+    float: right;
+}
+
+.from {
+    display: flex;
+    margin: auto;
+    width: 50%;
+
+    justify-content: space-around;
+}
+
+.content1 {
+    width: 32%;
+    flex-wrap: wrap;
+
+}
+
+.from>input {
+    font-size: 20px;
+}
