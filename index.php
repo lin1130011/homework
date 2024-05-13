@@ -27,23 +27,17 @@
     $diff = $i - $first_day_is;
     $days[] = date("Y-m-d", strtotime("$diff days", $first_day_stemp));
   }
-
   // 計算生肖數字
   $startYear = 4; // 陰曆起始年份
-
   // 計算陰曆年份
   $zodiacNumber = ($year - $startYear) % 12;
   if ($zodiacNumber < 0) {
     $zodiacNumber += 12;
   }
-
-
-
   $last_month = $month - 1;
   $next_month = $month + 1;
   $last_year = $year;
   $next_year = $year;
-
   if ($last_month < 1) {
     $last_month = 12;
     $last_year = $year - 1;
