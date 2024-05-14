@@ -5,15 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>萬年曆</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/3eab48196f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <?php
 
-  $month = $_GET['month'] ?? date("n");
+  $month = $_GET['month'] ?? date("m");
   $year = $_GET['year'] ?? date("Y");
-  $Month = date("F", strtotime("$year-$month"));
+  $Month = date("n", strtotime("$year-$month"));
   $str = "日 一 二 三 四 五 六";
   $header = explode(" ", $str);
 
@@ -47,24 +48,21 @@
     $next_year = $year + 1;
   }
   ?>
-  <div class="roww">
-    <form action="check.php" method="get" class="from">
-      <input type="number" name="year" class='content1' placeholder="請輸入年分(必填)" max=3000000>
-      <input type="number" name="month" class="content1" placeholder="請輸入月份(必填)" min=1 max=12>
-      <input type="submit" value="查詢" class="content">
+  <div class="form-row">
+    <form action="check.php" method="get" class="form">
+      <input type="number" name="year" class='content-year' placeholder='請輸入年分(必填)' min=1 max=3000000>
+      <input type="number" name="month" class="content-month" placeholder="請輸入月份(必填)" min=1 max=12>
+      <button type="submit" class="select"><i class="fa-brands fa-searchengin"></i></button>
     </form>
   </div>
 
-
   <div class="box">
-
-    <div class="title">
-      <img src="./images/<?= $zodiacNumber; ?>.jpg" alt="">
-    </div>
-
     <div class="left">
       <div class="title-content">
-        <h2>西元<?= "<span class='keyword'>$year</span>年"; ?><br><?= "<span class='keyword'>$Month</span>" ?></h2>
+        西元<?= "<span class='keyword'>$year</span>年"; ?><?= "<span class='keyword'>$Month</span>月" ?>
+      </div>
+      <div class="title-img">
+        <img src="./images/<?= $zodiacNumber; ?>.jpg" alt="">
       </div>
     </div>
 
@@ -90,20 +88,19 @@
           }
         }
       }
-
       ?>
     </div>
 
   </div>
   <div class="row">
     <div class="item1">
-      <a href="./index.php?month=<?= $last_month ?>&year=<?= $last_year ?>">上一個月</a>
+      <a href="./index.php?month=<?= $last_month ?>&year=<?= $last_year ?>"><button class="change"><i class="fa-solid fa-arrow-left"></i>上一個月</button></a>
     </div>
     <div class="item2">
-      <a href="./index.php?month=<?= $next_month ?>&year=<?= $next_year ?>">下一個月</a>
+      <a href="./index.php?month=<?= $next_month ?>&year=<?= $next_year ?>"><button class="change">下一個月<i class="fa-solid fa-arrow-right"></i></button></a>
     </div>
   </div>
-
+  </div>
 </body>
 
 </html>
