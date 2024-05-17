@@ -68,27 +68,58 @@
 
     <div class="right">
       <?php
+      $holiday = [
+        "01-01" => "元旦",
+        "02-28" => "和平紀念日",
+        "04-04" => "兒童節",
+        "05-01" => "勞動節",
+        "10-10" => "國慶日",
+        "12-25" => "行憲紀念日"
+      ];
+
+
       foreach ($header as $key => $value) {
         echo "<div class='header'>$value</div>";
       }
+
       foreach ($days as $key => $day) {
         $data = explode("-", $day)[2];
+        $month_day = date("m-d", strtotime($day)); // 取得 "月-日" 格式
         $what_day = date("w", strtotime($day));
+        $is_holiday = array_key_exists($month_day, $holiday);
+
         if ($what_day == 0 || $what_day == 6) {
           if (date("Y-m", strtotime($day)) !== date("Y-m", $first_day_stemp)) {
-            echo "<div class='outside-holiday'>$data</div>";
+            echo "<div class='outside-holiday'>$data" . "<br>";
+            if ($is_holiday) {
+              echo "<br><span class='holiday-name'>" . $holiday[$month_day] . "</span>";
+            }
+            echo "</div>";
           } else {
-            echo "<div class ='holiday'>$data</div>";
+            echo "<div class='holiday'>$data" . "<br>";
+            if ($is_holiday) {
+              echo "<br><span class='holiday-name'>" . $holiday[$month_day] . "</span>";
+            }
+            echo "</div>";
           }
         } else {
           if (date("Y-m", strtotime($day)) !== date("Y-m", $first_day_stemp)) {
-            echo "<div class='outsideday'>$data</div>";
+            echo "<div class='outsideday'>$data" . "<br>";
+            if ($is_holiday) {
+              echo "<br><span class='holiday-name'>" . $holiday[$month_day] . "</span>";
+            }
+            echo "</div>";
           } else {
-            echo "<div class='day'>$data</div>";
+            echo "<div class='day'>$data" . "<br>";
+            if ($is_holiday) {
+              echo "<br><span class='holiday-name'>" . $holiday[$month_day] . "</span>";
+            }
+            echo "</div>";
           }
         }
       }
       ?>
+
     </div>
 
   </div>

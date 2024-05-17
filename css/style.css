@@ -66,7 +66,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 90px;
     border: 1px solid #540b0e;
     border-right: 0px;
     font-family: 標楷體;
@@ -78,7 +78,7 @@ body {
 
 .title-img {
     width: 100%;
-    height: 480px;
+    height: 540px;
     margin: auto;
 }
 
@@ -118,19 +118,27 @@ body {
     opacity: 0.8;
 }
 
-.header,
+.header {
+    display: flex;
+    flex-direction: column;
+    width: calc(100%/7);
+    height: 90px;
+    border: 1px solid #540b0e;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
 .outside-holiday,
 .holiday,
 .outsideday,
 .day {
     display: flex;
+    flex-direction: column;
     width: calc(100%/7);
-    height: 80px;
+    height: 90px;
     border: 1px solid #540b0e;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    flex-grow: 1;
+    font-size: 26px;
 
 }
 
@@ -140,7 +148,6 @@ body {
 .outsideday:hover,
 .day:hover {
     background-color: lightblue;
-    font-size: 42px;
 }
 
 .header {
@@ -156,16 +163,27 @@ body {
 
 .holiday,
 .outside-holiday {
+
     background-color: #f07167;
 }
 
+
+
 .day,
 .outsideday {
+
     background-color: whitesmoke;
 }
 
 .day {
+
     font-weight: 1000;
+}
+
+.holiday-name {
+    text-align: right;
+    color: darkred;
+    font-size: 22px;
 }
 
 .row {
